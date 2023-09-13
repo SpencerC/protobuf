@@ -60,7 +60,7 @@ func TestClone(t *testing.T) {
 	}
 
 	// Create a clone using Clone and verify that it is equal to the original.
-	m := proto.Clone(cloneTestMessage).(*pb2.MyMessage)
+	m := proto.Clone(cloneTestMessage)
 	if !proto.Equal(m, cloneTestMessage) {
 		t.Fatalf("Clone(%v) = %v", cloneTestMessage, m)
 	}

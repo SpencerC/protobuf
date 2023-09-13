@@ -19,8 +19,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/golang/protobuf/proto"
 	"google.golang.org/protobuf/testing/protopack"
+
+	"github.com/golang/protobuf/proto"
 
 	pb2 "github.com/golang/protobuf/internal/testprotos/proto2_proto"
 	pb3 "github.com/golang/protobuf/internal/testprotos/proto3_proto"
@@ -963,7 +964,7 @@ func TestSubmessageUnrecognizedFields(t *testing.T) {
 	}
 
 	// Clone the OldMessage.
-	om = proto.Clone(om).(*pb2.OldMessage)
+	om = proto.Clone(om)
 	if !proto.Equal(om, exp) {
 		t.Errorf("Clone(om) = %v, want %v", om, exp)
 	}
@@ -2332,7 +2333,7 @@ func TestProto3SetDefaults(t *testing.T) {
 		},
 	}
 
-	got := proto.Clone(in).(*pb3.Message)
+	got := proto.Clone(in)
 	proto.SetDefaults(got)
 
 	// There are no defaults in proto3.  Everything should be the zero value, but

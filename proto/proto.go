@@ -126,8 +126,8 @@ func checkRequiredNotSet(m protoV2.Message) error {
 }
 
 // Clone returns a deep copy of src.
-func Clone(src Message) Message {
-	return MessageV1(protoV2.Clone(MessageV2(src)))
+func Clone[T Message](src T) T {
+	return MessageV1(protoV2.Clone(MessageV2(src))).(T)
 }
 
 // Merge merges src into dst, which must be messages of the same type.

@@ -1,7 +1,7 @@
 // Deprecated: Use the "google.golang.org/protobuf" module instead.
 module github.com/golang/protobuf
 
-go 1.9
+go 1.18
 
 require (
 	github.com/google/go-cmp v0.5.5
